@@ -1,4 +1,4 @@
-FROM tutum/wordpress:latest
+FROM kaihofstetter/wordpress-cli:4.1.1
 MAINTAINER Kai Hofstetter <kai.hofstetter@gmx.de>
 
 # Install plugins
