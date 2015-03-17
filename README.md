@@ -1,7 +1,9 @@
-# docker-wordpress-cli
-WordPress Docker image bundled with MySQL, WordPress CLI and Xdebug. Installs an automatically configured, ready to use WordPress and ready to debug WordPress. The WordPress sources can be mounted to the host file system.
+# docker-wordpress-xdebug
+WordPress Docker image for debugging WordPress, themes or plugins, bundled with MySQL, WordPress CLI and Xdebug. Installs an automatically configured, ready to use WordPress and ready to debug WordPress. The WordPress sources can be mounted to the host file system.
 
-Everything needed to run WordPress is included in the image and no manual configuration is needed. This image is perfect for debugging WordPress, WP plugins and themes.
+Everything needed to run WordPress is included in the image and no manual configuration is needed. 
+
+This image is perfect for debugging WordPress, WP plugins and themes.
 
 The MySQL database is accessible from the host. 
 
