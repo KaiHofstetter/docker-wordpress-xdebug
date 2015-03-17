@@ -13,6 +13,9 @@ The MySQL database is accessible from the host.
     ```
     docker run --name my-wordpress -v /path/to/host/wordpress_sources:/wordpress_sources -p 80:80 -d kaihofstetter/wordpress-xdebug
     ```
+    
+    **Very important!
+    The folder '/path/to/host/wordpress_sources' must be empty, because the WordPress sources will be copied to the folder!**
 2. Access WordPress
 
     ```
