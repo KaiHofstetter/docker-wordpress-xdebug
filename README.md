@@ -50,8 +50,6 @@ WordPress needs to know the site URL used by the host, because WordPress redirec
 
     ```
     docker run --name my-wordpress -v /path/to/host/wordpress_sources:/wordpress_sources -p 8080:80 -e WP_URL="localhost:8080" -d kaihofstetter/wordpress-xdebug
-    
-     -p 80:80 -d 
     ```
 2. Access WordPress
 
