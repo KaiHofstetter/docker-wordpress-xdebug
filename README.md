@@ -1,9 +1,11 @@
 # docker-wordpress-xdebug
-WordPress Docker image for debugging WordPress, themes or plugins, bundled with MySQL, WordPress CLI and Xdebug. Installs an automatically configured, ready to use WordPress and ready to debug WordPress. The WordPress sources can be mounted to the host file system.
+WordPress Docker image for debugging WordPress, themes or plugins, bundled with MySQL, WordPress CLI and Xdebug. 
+Installs an automatically configured, ready to use WordPress. 
 
+The WordPress sources can be mounted to the host file system for debugging the WordPress source code.
 Everything needed to run WordPress is included in the image and no manual configuration is needed. 
 
-This image is perfect for debugging WordPress, WP plugins and themes.
+This image is perfect for debugging WordPress, themes or plugins.
 
 The MySQL database is accessible from the host. 
 
@@ -15,7 +17,7 @@ The MySQL database is accessible from the host.
     ```
     
     **Very important!
-    The folder '/path/to/host/wordpress_sources' must be empty, because the WordPress sources will be copied to the folder!**
+    The folder '/path/to/host/wordpress_sources' should be empty, except for plugin or theme source code you want to debug. The WordPress sources will be copied to the folder!**
 2. Access WordPress
 
     ```
