@@ -35,11 +35,29 @@ The MySQL database is accessible from the host.
     Password: 'secret'
 
 ### Using Xdebug
- 1. Configure your IDE to listen on port 9000 for Xdebug, or the port you configured via the Docker environment variable 'XDEBUG_PORT'.
+ 1. Configure your IDE to listen on port 9000 for Xdebug, or the port you configured via the XDEBUG_PORT environment variable.
  2. Set the source path for debugging in your IDE to the configured '/path/to/host/wordpress_sources'
  3. Set the XDEBUG_SESSION cookie in your browser (e.g. via a browser extension:  https://chrome.google.com/extensions/detail/eadndfjplgieldjbigjakmdgkmoaaaoc)
 
 For more information about remote debugging with Xdebug : [http://xdebug.org/docs/remote](http://xdebug.org/docs/remote)
+
+### Changing the WordPress port
+If you don't want to use the default port 80 on the host to access WordPress, besides changing the Docker port mapping (e.g. '...-p 8080:80...'), you also need to change the configured WordPress site URL by setting the WP_URL environment variable (e.g. '...WP_URL="localhost:8080"...').
+
+WordPress needs to know the site URL used by the host, because WordPress redirects to the site URL and uses links to the site URL. 
+
+1. Run WordPress
+
+    ```
+    docker run --name my-wordpress -v /path/to/host/wordpress_sources:/wordpress_sources -p 8080:80 -e WP_URL="localhost:8080" -d kaihofstetter/wordpress-xdebug
+    
+     -p 80:80 -d 
+    ```
+2. Access WordPress
+
+    ```
+    http://localhost:8080
+    ```
 
 ### Accessing the MySQL database
 Run WordPress with mapped MySQL port 3306:
@@ -68,6 +86,8 @@ You can use the following environment variables to configure MySQL and WordPress
   * MySQL user, used by WordPress
 * **MYSQL_WP_PASSWORD** (default is 'secret')
   * MySQL password, used by WordPress
+* **WP_URL** (default is 'localhost')
+  * The address of the WordPress site.
 * **WP_TITLE** (default is 'WordPress Demo')
   * Title of the WordPress blog
 * **WP_ADMIN_USER** (default is 'admin_user')
