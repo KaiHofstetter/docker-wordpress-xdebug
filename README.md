@@ -35,7 +35,7 @@ The MySQL database is accessible from the host.
     Password: 'secret'
 
 ### Using Xdebug
- 1. Configure your IDE to listen on port 9000 for Xdebug
+ 1. Configure your IDE to listen on port 9000 for Xdebug, or the port you configured via the Docker environment variable 'XDEBUG_PORT'
  2. Set the source path for debugging in your IDE to the configured '/path/to/host/wordpress_sources'
  3. Set the XDEBUG_SESSION cookie in your browser (e.g. via a browser extension:  https://chrome.google.com/extensions/detail/eadndfjplgieldjbigjakmdgkmoaaaoc)
 
