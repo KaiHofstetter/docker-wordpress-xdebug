@@ -1,4 +1,4 @@
-FROM kaihofstetter/wordpress-cli:4.1.1
+FROM kaihofstetter/wordpress-cli:4.2
 MAINTAINER Kai Hofstetter <kai.hofstetter@gmx.de>
 
 # Install plugins
