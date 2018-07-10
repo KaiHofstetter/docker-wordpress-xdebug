@@ -80,6 +80,16 @@ You can use the following environment variables to configure MySQL and WordPress
 
 * **XDEBUG_PORT** (default is '9000')
   * Port used by Xdebug to connect to IDE 
+* **XDEBUG_HOST** (default is auto-detected)
+  * Host used by Xdebug to connect to IDE.
+    Leave empty by default or set to "docker.for.mac.localhost" if use Docker for Mac.
+* **XDEBUG_REMOTE_AUTOSTART** (default is "on")
+  * Start a debug session automatically.
+* **XDEBUG_REMOTE_CONNECT_BACK** (default is "off")
+  * Try to connect to the client that made the HTTP request
+   (could be problematic to use with Docker for Mac, use appropriate `XDEBUG_HOST` setting instead)
+* **XDEBUG_REMOTE_KEY** (default is empty)
+  * IDE Key, for example 'PHPSTORM'
 * **MYSQL_WP_USER** (default is 'WordPress')
   * MySQL user, used by WordPress
 * **MYSQL_WP_PASSWORD** (default is 'secret')

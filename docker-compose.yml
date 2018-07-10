@@ -1,0 +1,27 @@
+version: '2'
+services:
+  wordpress-xdebug:
+      build: ./
+#      image: 'kaihofstetter/docker-wordpress-xdebug:latest'
+#      image: 'codeneric/wordpress-xdebug:latest'
+      image: 'docker-wordpress-xdebug' # local
+      ports:
+        - '80:80'
+        - '3306:3306'
+      volumes:
+        - './wordpress_sources:/wordpress_sources'
+      environment:
+        - XDEBUG_PORT=9000
+        - XDEBUG_HOST=docker.for.mac.localhost
+        - XDEBUG_REMOTE_KEY=PHPSTORM
+        - XDEBUG_REMOTE_AUTOSTART=on
+        - MYSQL_WP_USER=wordpress
+        - MYSQL_WP_PASSWORD=wordpress
+        - WP_URL=localhost:8082
+        - WP_TITLE=Wordpress with Xdebug
+        - WP_ADMIN_USER=admin
+        - WP_ADMIN_PASSWORD=admin
+        - WP_ADMIN_EMAIL=admin@localhost
+volumes:
+  wordpress_sources:
+    driver: local
