@@ -13,7 +13,7 @@ The MySQL database is accessible from the host.
 1. Run WordPress
 
     ```
-    docker run --name my-wordpress -v /path/to/host/wordpress_sources:/wordpress_sources -p 80:80 -d kaihofstetter/wordpress-xdebug
+    docker run --name my-wordpress -v /path/to/host/wordpress_sources:/wordpress_sources -p 80:80 -d kaihofstetter/docker-wordpress-xdebug
     ```
     
     **Very important!
